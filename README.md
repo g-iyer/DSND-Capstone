@@ -26,7 +26,7 @@ All these methods are well documented on the Internet as the micromouse problem 
 
 This report details the approach, the methodology and the results. 
 
-** The conclusion is that the __Flood Fill method__ is the best algorithm to solve the navigation of a maze effectively. **
+**The conclusion is that the __Flood Fill method__ is the best algorithm to solve the navigation of a maze effectively.**
 
 
 ## Background ##
