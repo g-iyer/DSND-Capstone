@@ -43,6 +43,8 @@ The core idea of this project is based on the popular maze solving competition f
 
 ## Implementation ##
 
+[link to AI Starter code](https://docs.google.com/document/d/1ZFCH6jS3A5At7_v5IUM5OpAXJYiutFuSIjTzV_E-vdE/pub) - **please note that this code is not in Python 3.+ . I have updated the files and posted them to this repository**
+
 
 ## Refinement ##
 
