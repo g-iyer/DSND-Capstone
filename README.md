@@ -5,19 +5,17 @@ Hello and Welcome to my project - ''Robot Motion Planning'' - for the capstone o
 
 ## Executive Summary ##
 
-This project is about developing a virtual robot that will navigate a virtual maze utilizing different methods.
+For my capstone project I decided to use the Robot Motion Planning project. This project is about developing a virtual robot 
+that will navigate a virtual maze utilizing different methods.
 
 It is inspired by the micromouse competition popularized by IEEE – for a very interesting article please see this link [The Amazing MicroMouse  Contest](http://spectrum.ieee.org/consumer-electronics/gadgets/the-amazing-micromouse-contest "The Amazing MicroMouse  Contest").
 
 In this project except for the maze dimensions nothing else is known. So the robot has to first explore and then exploit the maze.
-
 The objective is for the robot to reach the goal i.e., the center of the maze, using the best possible algorithm in the best possible time. 
 
-Three maze definition files are given. The solution needs to apply different methods of navigation to reach the center of these mazes. 
-
-A tester program is provided (from the starter code set) that applies the solution to solve a given maze and reports the score at the end.
-
-The method with the lowest score would be the best solution.
+Three *maze definition files* are given. The solution needs to apply different methods of navigation to reach the center of these mazes. 
+A *tester* program is provided (from the *starter code* set) that applies the solution to solve a given maze and reports the score at the end.
+The navigation method with the lowest score would be the best solution.
 
 I have created the solution to search using multiple popular algorithms 
 	– Follow the Wall, Breadth First Search, Depth First Search, Uniform Cost Search, A* (aka A Star) search and the Flood Fill search. 
