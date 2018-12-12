@@ -44,7 +44,7 @@ The core idea of this project is based on the popular maze solving competition f
 #### Datasets and inputs ###
 
 
-![test_maze_01.txt](/images/test_maze_01_txt.jpg)
+![test_maze_01.txt](images/test_maze_01_txt.jpg)
 
 ## Implementation ##
 
