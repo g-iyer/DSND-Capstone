@@ -1,4 +1,4 @@
-#H1 Robot Motion Planning - DSND Capstone project
+# Robot Motion Planning - DSND Capstone project
 
 
 
