@@ -26,7 +26,6 @@ This report details the approach, the methodology and the results.
 
 **The conclusion is that the __Flood Fill method__ is the best algorithm to solve the navigation of a maze effectively.**
 
-
 ## Project Definition ##
 The project relates to the domain of robot localization and movement planning. It is necessary for a robot to know its position in a real or virtual world situation, decide on the action to take and then complete the action – while considering the goal at all times. This problem is common across all mobile robots – be it a competition robot or a self-driving car or lunar rovers! This area has been of interest since the DARPA grand challenges that motivated the development of cars that could navigate open land routes. 
 The core idea of this project is based on the popular maze solving competition for robots –  the Micromouse (wikipedia description) competition. I have also come across the Trinity College Firefighting Robot competition where a robot must find a room in a home (a maze) with an open fire and extinguish it in the shortest possible time. Trinity College competition references: ( Tufts University description ) (Rules of the competition).
