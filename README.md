@@ -10,7 +10,7 @@ that will navigate a virtual maze utilizing different methods.
 
 It is inspired by the micromouse competition popularized by IEEE – for a very interesting article please see this link [The Amazing MicroMouse  Contest](http://spectrum.ieee.org/consumer-electronics/gadgets/the-amazing-micromouse-contest "The Amazing MicroMouse  Contest").
 
-In this project except for the maze dimensions nothing else is known. So the robot has to first explore and then exploit the maze.
+In this project except for the maze dimensions nothing else is known. So the robot has to _first explore and then exploit_ the maze.
 The objective is for the robot to reach the goal i.e., the center of the maze, using the best possible algorithm in the best possible time. 
 
 Three *maze definition files* are given. The solution needs to apply different methods of navigation to reach the center of these mazes. 
@@ -43,7 +43,51 @@ The core idea of this project is based on the popular maze solving competition f
 
 ## Implementation ##
 
-[link to AI Starter code](https://docs.google.com/document/d/1ZFCH6jS3A5At7_v5IUM5OpAXJYiutFuSIjTzV_E-vdE/pub) - **please note that this code is not in Python 3.+ . I have updated the files and posted them to this repository**
+### Files ###
+
+[link to AI Starter code](https://docs.google.com/document/d/1ZFCH6jS3A5At7_v5IUM5OpAXJYiutFuSIjTzV_E-vdE/pub) - 
+**Pplease note that this code is not in Python 3.+ . I have updated the files and posted them to this repository**
+*You must use the files from this repository - not from the starter code zip file*
+
+### Files ###
+1. Files included 
+	tester.py		supplied - to test the robot and provide scores for succesful runs 
+	maze.py			supplied - creating and managing the maze for tester.py
+	showmaze.py		supplied - standalone to print maze using turtle
+	
+	robot.py		supplied and modified to select algorithm and interface with tester.py
+	maze_managment.py	Maze related functions implemented
+	flood_fill.py		Flood Fill algorithm
+	graph_search.py		Search algorithms including BFS, DFS, UC and A*
+	follow_wall.py		Follow Wall algorithm
+	
+	util.py			Graph search utilities file form UC Berkley CS188 course website
+	
+	options.txt		Search method options (please see instructions below)
+	
+	/doc			folder with documentation files
+		Navigate-Virtual-Maze-Project-Report.pdf		Project report
+		Robot-motion-project-proposal-rev1.pdf			Project proposal - link to review https://review.udacity.com/#!/reviews/446660
+		navigate-maze-trials.xlsx				Run results
+		A-Star-sample-run.txt					Console output of A Star search
+		Flood-fill-sample-run.txt				Console output of Flood Fill search
+		
+		test_maze_**.jpg					screen shot files of mazes
+2. Operating instructions
+	2.A	Edit the options.txt file with one of these 6 values (enter ONLY the text in quotes)
+		"WF"	- Follow Wall 
+		"BF"	- Breadth First
+		"DF"	- Depth First
+		"UC"	- Uniform Cost
+		"ASTAR"	- A Star
+		"FF"	- Flood Fill
+	2.B	The trial is executed by this command - replace xx with 01, 02 or 03 as required.
+		python tester.py test_maze_xx.txt
+
+
+
+
+
 
 
 ## Refinement ##
