@@ -41,6 +41,11 @@ The core idea of this project is based on the popular maze solving competition f
 
 ### Data Exploration ###
 
+#### Datasets and inputs ###
+
+
+![test_maze_01.txt]()
+
 ## Implementation ##
 
 ### Files ###
