@@ -1,6 +1,6 @@
-![](media/64cbf9791200157d008e0b47560a7161.png)
+## Robot Motion Planning - DSND Capstone project **
 
-**(**
+
 
 I. Definition
 =============
