@@ -417,26 +417,24 @@ the Flood Fill
 .
 
 This algorithm has been used for maze navigation in the micromouse competition.
-They key point to note is that this method starts with the assumption that the
-maze has no walls. So the maze is at this time a representation of cells with no
-walls. With this assumption it is easy to calculate the direct distance from
+The key point is that this method starts with the assumption that the
+maze has no walls. With this assumption it is easy to calculate the direct distance from
 start to the center goal. As the algorithm progresses it maintains lists of
 explored cells and builds cells as per walls detected. This is a recursive
 process.
 
 It is easier to understand if we go back to the water flow analogy – that the
-maze’s goal is at the bottom and water flows to that.
+maze’s goal is at the bottom and water flows to that (like an inverted pyramid).
 
-This is implemented in *flood_fill.py* . The results show that this algorithm
-results in consistent scores for all the mazes in all the trials.
+This is implemented in *flood_fill.py* . The results show that this algorithm achieves 
+consistent scores for all the mazes in all the trials.
 
 Refinement
 ----------
 
-During the implementation, I went through a progressive learning process.
 Although the Internet is a great source of python code for maze solving, it was
 quite an experience to (a) understand the various approaches and (b) to
-implement this particular problem.
+implement solutions to this particular problem.
 
 I had to clearly understand the interaction of the *robot* object with the
 *tester.py* program to make sure that the sensor information was correctly
@@ -447,10 +445,6 @@ code to visualize the map and that inspired me to create the
 *maze_management.py* to manage the various activities associated with the maze.
 As I developed the solution code, the maze management code also got modified as
 needed.
-
-It was useful to understand how each algorithm performed as I implanted them. It
-was also good that for the graph search I came across the UC Berkley
-implementation.
 
 I tested the code regularly and used the PyCharm tools to manage the trials and
 to debug. The end results do show that the Flood Fill method is consistent in
@@ -467,7 +461,7 @@ Model Evaluation and Validation
 All results were collected in a spreadsheet and the following chart shows the
 scores, normalized scores, minimums and averages.
 
-![](media/b1dc7c25e25c161063712df610ddf7f4.emf)
+![Trial runs and scores](data/trail_scores.png)
 
 The table shows the following:
 
@@ -475,7 +469,7 @@ The table shows the following:
 
 -   Trial No. – number of each trial – 5 per method
 
--   Maze 01, 02, 03 Score(s) – these are scores as reported by *the tester.py*
+-   Maze 01, 02, 03 Score(s) – these are scores as reported by the *tester.py*
     program
 
     -   Please note that the “999” values indicate trials that did not complete
@@ -525,9 +519,6 @@ Looking at the scores we can observe:
 -   A\* search scores show near consistent results and the minimum Normal scores
     are closer to 1.
 
-    -   Except for (Maze 1, Trial 2) with a score of 660.43 (Normal score 5.67)
-        the scores are close to Normal.
-
 -   The Flood Fill scores show the for each maze, for each trial the score is
     consistent.
 
@@ -535,7 +526,7 @@ Looking at the scores we can observe:
         is “1” and we don’t see any variance between trials.
 
 The results clearly show that Flood Fill should be the algorithm of choice as it
-is most efficient (with the lowest scores for each trial) and consistent (every
+is *most efficient* (with the lowest scores for each trial) and *consistent* (every
 trial has the same score indicating that Flood Fill finds the best path and
 executes it).
 
@@ -576,7 +567,7 @@ The following figure shows a couple of possible paths for the 12 x 12 maze.
 There are more than these 2 paths to reach the goal as can be seen. This is to
 demonstrate that there are multiple paths to the goal.
 
-![C:\\Users\\pgk\\AppData\\Local\\Microsoft\\Windows\\INetCache\\Content.Word\\test_maze_01_fh.jpg](media/70116b8a5c5bd860a398863f2b52a84c.jpg)
+![Path possibilities](data/maze_paths.jpg)
 
 The following figure shows the terminal output of a A\* trial run. Please note
 the number of steps and the final score shown (the picture shows the beginning,
@@ -584,9 +575,7 @@ the end of the first run, beginning of the final run (or run 1) and the final
 results. A sample terminal output file is included in the documentation for this
 project – *A-Star-sample-run.txt.* The output in the file shows the full run.
 
-![](media/c328b610224c0e1f5ad568dbc40be22e.jpg)
-
-Figure 8 Sample A Star run console output
+![A Star trial run](data/a_star_trial.png)
 
 Similarly, the Flood Fill trial run is shown below. It shows the beginning of
 the trial and the end. Please see the enclosed *Flood-fill-sample-run.txt* for a
@@ -599,30 +588,18 @@ and gets the same score every time for a given maze.
 Figure 9 Flood Fill trial run console output
 
 I observed that methods other than Flood Fill took different number of steps
-(these can be seen on the console when the trails are conducted) to reach the
-goal indicating that they were navigating via different routes on each run.
-Compared to these, Flood Fill search consistently ran the same path every time.
-
-Further during the debugging runs, I displayed the (rotation, movement) data
-being sent to *tester.py* and observed the same pattern indicating Flood Fill
-finds the optimal path and then traverses it without any randomness. So, Flood
-Fill seems to be the best solution to navigate these mazes.
+(these can be seen on the console when the trials are run) to reach the
+goal navigating via different routes on each run. Compared to these, Flood Fill search 
+consistently ran the same path every time.
 
 Reflection
 ----------
 
-I picked this project based on my exposure to the various robot competitions
-such as the Trinity College Fire Fighting robot contest. The challenge I
-realized was that this was different from a physical robot navigation problem! I
-had to learn many of the maze navigation theories starting with treating a maze
+I picked this project due to my interest in robotics competitions such as FIRST,
+DARPA challenges and the Trinity College Fire Fighting robot contest. This project is
+different from the physical robot in these competitions. It was very interesting and challenging
+as this project helped me learn many of the maze navigation theories starting with treating a maze
 as a graph to understanding flood fill.
-
-I also needed to increase my python program skills in an accelerated manner as I
-was more used to coding in other languages. It was tough to understand its
-requirements but it was also great to learn its power to manage lists,
-dictionaries and queues. It really helped to discover the PyCharm editor as that
-helped me develop and test code rapidly. I do believe there are many ways to
-program the solution using better techniques.
 
 It would be interesting to see if the run time limitation was removed whether
 the other algorithms managed to navigate the maze. As *tester.py* is not to be
@@ -637,9 +614,7 @@ properties such as having many dead ends, loops and braids. Please see this link
 ([Maze Classification](http://www.astrolog.org/labyrnth/algrithm.htm)),
 especially the section Routing. A partial screen shot shows this topic:
 
-![](media/634e52b560438700e6ada7f942e9b2e4.png)
-
-Figure 10 - Routing (in Maze Classification web page)
+![Maze Routing](maze_routing.png)
 
 It was very good to learn how the micromouse competition has influenced so many
 teams and the varied approach people have taken to contest. The application of
@@ -694,3 +669,4 @@ Figure 11 - Test Maze 02 (14 x 14)
 ![](media/85667dd30e642716a5a9c561c1dad3e5.jpg)
 
 Figure 12 - Test Maze 03 (16 x 16)
+
