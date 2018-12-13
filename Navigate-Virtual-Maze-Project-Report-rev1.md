@@ -30,7 +30,10 @@ The approach, the methodology and the results are documented here. The
 conclusion is that the Flood Fill method is the best algorithm to solve the
 navigation of a maze effectively.
 
-The project definition is available in Udacity at this link [Plot and Navigate a Virtual Maze](https://docs.google.com/document/d/1ZFCH6jS3A5At7_v5IUM5OpAXJYiutFuSIjTzV_E-vdE/pub)
+The project definition is available in Udacity at this link [Plot and Navigate a Virtual Maze](https://docs.google.com/document/d/1ZFCH6jS3A5At7_v5IUM5OpAXJYiutFuSIjTzV_E-vdE/pub). The starter code
+is given at this link (AI_starter_code.zip)[https://drive.google.com/file/d/0B9Yf01UaIbUgQ2tjRHhKZGlHSzQ/view].
+__(Caution: this code is in Python 2.7. As this project requires Python 3.0+, I have updated the code and posted it 
+in this repository to be used for testing etc.)__
 
 Domain background
 -----------------
@@ -146,16 +149,14 @@ indicating a wall:
 
     ![Figure 3](images/test_maze_01.jpg)
 
-
 ### Robot sensor input
 
 The robot has 3 sensors – **Left, Forward** and **Right**. These sensors report
 how many cells are open to the left, front and right of the robot. For example,
 in the test_maze_01.txt maze (Figure 3) the first cell has walls on the Left and
-Right and is open at the front for 11 cells. The sensor reading for this then is
-0,11,0.
+Right and is open at the front for 11 cells. The sensor reading for this is 0,11,0.
 
-At every step the robot will receive information, from the tester.py program, on
+At every step the robot will receive information, from the _tester.py_ program, on
 the number of open cells as seen by the 3 sensors. The data corresponds to the
 Left, Center and Right sensors. The robot has to decide and act based on these
 inputs whether to move or not. If a move is possible it will also have to decide
@@ -165,7 +166,7 @@ cells.
 Algorithms and Techniques
 -------------------------
 
-I researched possible approaches to this problem. There are many ways of guiding
+I researched several possible approaches to this problem. There are many ways of guiding
 the robot starting with simple methods such as Wall Following and brute force
 method of exploring every cell, all the way to complex methods such as SLAM
 (Simultaneous Localization and Mapping - [Wikipedia entry on
@@ -183,30 +184,21 @@ to this project:
     nicely:[mazes and solving
     them](http://www.astrolog.org/labyrnth/algrithm.htm))
 
-    -   *Wall following*: the robot moves and when a wall is met it turns right
-        (or left) and continues. It is like touching one of the walls at all
-        times. This works for simple mazes but the micromouse mazes are usually
-        created to defeat this algorithm. The given mazes are not simple enough
+    -   *Wall following*: the robot moves and when it hits a wall it turns right
+        (or left) and continues. This works for simple mazes but the given mazes are not simple enough
         for this method to be used. This method is also called “dead reckoning”.
 
     -   *Block deadend* (or deadend learning): this method is similar to wall
         following with the improvement that any cells found to be deadends are
         blocked off so that they are not included in the next routing. There is
-        a chance for the robot to go around in loops depending on the maze
-        design.
+        a chance for the robot to go around in loops for some maze designs.
 
     -   *Breadth/Depth First search*: these methods “traverse” a tree
-        representation of the maze. As the names suggest the Breadth First
-        algorithm traverses a tree and searches “across” the level, all the
-        cells in the neighborhood and then moves to the next level. The Depth
-        First method traverses one branch of the tree till it reaches the end.
+        representation of the maze. The Breadth First algorithm traverses a tree 
+        and searches all the cells “across” a level and then moves to the next level. 
+        The Depth First method traverses one branch of the tree till it reaches the end.
         Then it starts with the next branch. Both methods work consistently but
         may not result in the optimal solution.
-
-    -   This article describes these search methods and shows how mazes can be
-        treated as graphs - [Labyrinth Algorithms - Bryukhanov
-        Valentin](http://bryukh.com/labyrinth-algorithms/) (github: [github
-        repository](https://github.com/Bryukh/labyrinth-algorithms))
 
 -   *A\* or A Star search*: This method, given a start and end position searches
     all paths and finds the path with the least time or steps etc. (also
@@ -223,7 +215,7 @@ to this project:
         this project for the search agent implementation.
 
 -   *Flood Fill search:* This has been the algorithm of choice for maze solving.
-    Simply put if one imagines a maze to be a series of levels that drop down
+    If one imagines a maze to be a series of levels that drop down
     towards the center, flood fill would be the way water would flow towards the
     center “goal”. It will find the path of least resistance quickly ([Flood
     fill approach to the IEEE micro-mouse
@@ -243,7 +235,7 @@ the number of steps it takes for the robot to find the center of the maze.
 Benchmark
 ---------
 
->   The scoring as defined in the project specifications is as below:
+>   The scoring method is defined in the project specifications as below:
 
 *Score = Number of steps to complete Run 2 + (Number of steps to complete Run
 1)/30*
@@ -258,14 +250,14 @@ Benchmark
 The purpose of the benchmark is to evaluate the different algorithms used to
 solve the problem to decide which method is the best. To compare such methods,
 we will need a **normalized score** that would specific to each maze. It would
-be calculated by dividing a given score by the best possible score for that
+be calculated by dividing a given run score by the best possible score for that
 maze.
 
->   *Maze normal score = Robot score/ Best possible score (for that maze)*
+>   *Maze normal score = Robot run score/ Best possible score (for that maze)*
 
-Once the Maze Normal Score for each method (per maze) is available we can
+Once the Maze Normal Score for each search method (per maze) is available we can
 compare to see which method performed best. We will use the A\* search scores as
-the benchmark to determine the best solution. A\* search is a popular search
+the benchmark to determine the best solution. A\* search was selected as it is a popular search
 algorithm and works in most cases. We could have used the others like Follow
 Wall, Breadth/Depth First etc., but it is well known that these don’t perform
 very well.
