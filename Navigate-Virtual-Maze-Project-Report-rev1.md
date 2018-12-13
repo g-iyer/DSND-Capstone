@@ -281,7 +281,7 @@ Python 3.6.2 (Anaconda 3 - 64 bit) was used for development and testing. I also 
 ([JetBrains Pycharm Community Edition](https://www.jetbrains.com/pycharm/)) as
 my IDE that helped a lot in the coding and instantaneous testing of new code.
 
-The project comes with the starter code given at this link (AI_starter_code.zip)[https://drive.google.com/file/d/0B9Yf01UaIbUgQ2tjRHhKZGlHSzQ/view].
+The project comes with the starter code given at this link [AI_starter_code.zip](https://drive.google.com/file/d/0B9Yf01UaIbUgQ2tjRHhKZGlHSzQ/view).
 __(Caution: this code is in Python 2.7. As this project requires Python 3.0+, I have updated the code and posted it 
 in this repository to be used for testing etc.)__
 
@@ -357,7 +357,7 @@ graph search methods are implemented.
 
 Figure 5 main Graph Search
 
-![Graph Search](iamges/graph_search.png)
+![Graph Search](images/graph_search.png)
 
 ##### *Discussion of Breadth First, Depth First and Uniform Cost methods*
 
@@ -371,7 +371,7 @@ Breadth First method first searches for open cells in its neighborhood (adjacent
 cells) and then moves to the next level starting from the starting node. The
 simple image below shows the steps a breadth first method would take.
 
-![](media/5f0aedc7932f3d0b0dbfd222052737b9.png)
+![Breadth First](images/bf_tree.png)
 
 Figure 6 - Breadth First (geeksforgeeks.org)
 
@@ -379,7 +379,7 @@ Compared to Breadth First, Depth First searches for open cells in one branch
 starting at the base node traversing till end and then starting with another
 branch. The image below shows the depth first approach.
 
-![](media/13b32da4a5387f953f7b2dbbbb42d60f.png)
+![Depth First](images/depth_first.png)
 
 Figure 7 Depth First (wikipedia)
 
