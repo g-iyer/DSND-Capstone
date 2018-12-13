@@ -14,40 +14,31 @@ popularized by IEEE – for a very interesting article please see this link [The
 Amazing MicroMouse
 Contest](http://spectrum.ieee.org/consumer-electronics/gadgets/the-amazing-micromouse-contest).
 In this project except for the maze dimensions nothing else is known. So the
-robot has to first explore and then exploit the maze.
+robot has to _first explore and then exploit_ the maze.
 
 The objective is for the robot to reach the goal – a set of rooms in the center
 of the maze, using the best possible algorithm in the best possible time. Three
 maze definition files are given. The solution needs to apply different methods
-of navigation to reach the center of these arrays. A tester program is provided
-that applies the solution to solve a given maze and reports on the end result by
-calculating a score. The method with the lowest score would be the best
-solution.
+of navigation to reach the center of these arrays. A _tester_ program is provided
+to apply the solution to solve a given maze and a score is given. 
 
-I have coded the solution to search using popular algorithms – *Follow the
+I have developed the solution using several popular algorithms – *Follow the
 Wall*, *Breadth First Search*, *Depth First Search*, *Uniform Cost Search, A\*
-(aka A Star) search* and the *Flood Fill search*. All these methods are well
-documented on the Internet as the micromouse problem has been extensively
-researched.
+(aka A Star) search* and the *Flood Fill search*. 
 
-This report details the approach, the methodology and the results. The
+The approach, the methodology and the results are documented here. The
 conclusion is that the Flood Fill method is the best algorithm to solve the
 navigation of a maze effectively.
+
+The project definition is available in Udacity at this link [Plot and Navigate a Virtual Maz](https://docs.google.com/document/d/1ZFCH6jS3A5At7_v5IUM5OpAXJYiutFuSIjTzV_E-vdE/pub)
 
 Domain background
 -----------------
 
-With the current interest and activity in autonomous vehicles and my ongoing
-interest in robotics I was glad to see this project – *Plotting and Navigating a
-virtual maze* – as one of the options for the MLND capstone.
-
 The project relates to the domain of robot localization and movement planning.
-It is necessary for a robot to know its position in a real or virtual world
-situation, decide on the action to take and then complete the action – while
-considering the goal at all times. This problem is common across all mobile
-robots – be it a competition robot or a self-driving car or lunar rovers! This
-area has been of interest since the DARPA grand challenges that motivated the
-development of cars that could navigate open land routes.
+For effective motion, a robot to know its position in the real or virtual world space,
+decide on the action to take and then complete the action – while
+considering the goal at all times.
 
 The core idea of this project is based on the popular maze solving competition
 for robots – the Micromouse [(wikipedia
@@ -62,19 +53,12 @@ description](https://wikis.uit.tufts.edu/confluence/display/TuftsRobotics/Trinit
 In both competitions, the robot has to locate a goal (either the center of the
 maze or a lit candle) in the shortest possible time and consistently over
 multiple trials. The robot depends on sensor readings – the sensors can be
-touch, IR, SONAR, LIDAR and/or on-board cameras. Due to the limited size of the
-robots the level of hardware was limited as no off-board computing is allowed.
-With the introduction very powerful MCUs and integrated SBCs like arduinos and
-Raspberry PIs the current robots have become very powerful in computing.
-
-From these beginnings, one can go on to other areas such as non-maze navigation
-and real world mobility. Studying and solving this problem of navigating a
-virtual maze builds a very good foundation for further explorations.
+touch, IR, SONAR, LIDAR and/or on-board cameras.
 
 Problem Statement
 -----------------
 
-We are given defined mazes of n x n dimensions where n = 12, 14 and 16. Our
+We are given defined mazes of n x n dimensions where n = 12, 14 and 16. The
 virtual robot must traverse these mazes (one at a time) from the lower left
 corner (home) to the center (the goal). The robot must find the optimal path to
 the center in the least number of movements. It will be given one opportunity to
@@ -84,13 +68,11 @@ best route to goal found in the first run.
 Metrics
 -------
 
-As specified in the project details, the *tester.py* program uses the *Robot*
+The *tester.py* program, included as part of the starter code, uses the *Robot*
 class (in *robot.py*) to navigate the maze using the search algorithms. The test
 condition is that the robot is given a maximum of 1000 time steps to locate the
 goal otherwise the run is said to have failed. It also reports back a score
 based on the formula (provided in the project definition) given below:
-
-Or
 
 **Run Score = (Time steps for Second run) + 1/30(Time steps for First run)**
 
