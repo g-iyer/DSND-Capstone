@@ -277,16 +277,17 @@ Implementation
 
 #### Initial setup
 
-Python 2.7 was used for development and testing. I also used JetBrains PyCharm
+Python 3.6.2 (Anaconda 3 - 64 bit) was used for development and testing. I also used JetBrains PyCharm
 ([JetBrains Pycharm Community Edition](https://www.jetbrains.com/pycharm/)) as
 my IDE that helped a lot in the coding and instantaneous testing of new code.
 
-The project comes with a set of data and code as below ([Starter code
-link](https://drive.google.com/file/d/0B9Yf01UaIbUgQ2tjRHhKZGlHSzQ/view))
+The project comes with the starter code given at this link (AI_starter_code.zip)[https://drive.google.com/file/d/0B9Yf01UaIbUgQ2tjRHhKZGlHSzQ/view].
+__(Caution: this code is in Python 2.7. As this project requires Python 3.0+, I have updated the code and posted it 
+in this repository to be used for testing etc.)__
 
 -   *robot.py - This script establishes the robot class.*
 
-    -   *This will be modified for this project with the actions needed to solve
+    -   *This is modified for this project with the actions needed to solve
         the maze.*
 
 -   *maze.py - This script contains functions for constructing the maze and for
@@ -296,37 +297,39 @@ link](https://drive.google.com/file/d/0B9Yf01UaIbUgQ2tjRHhKZGlHSzQ/view))
     mazes.*
 
 -   *showmaze.py - This script can be used to create a visual demonstration of
-    what a maze looks like.*
+    what a maze looks like.* The maze visualizaions were generated using this.
 
--   *test_maze_\#\#.txt - These files provide three sample mazes upon which to
-    test your robot. Feel free to create your own mazes using the specifications
-    above.*
+-   *test_maze_nn.txt - These files provide three sample mazes upon which to
+    test the robot*
 
 #### Search option selection
 
-I updated code in the *robot.py* to properly initialize required data items. I
-also implemented code to read algorithm options from a text file called
+I updated code in the *robot.py* to properly initialize required data items.
+
+I also implemented code to read algorithm options from a text file called
 *options.txt (Figure 4).* It is a single line file where the user can enter one
 of these six options – this made testing easy:
+* WF : Follow all
+* DF : Depth First
+* BF : Breadth First
+* UC : Uniform Cost
+* ASTAT : A Star
+* FF : Flood Fill
 
-![](media/8b575a913bd95c20cb79f21eaa9e5c26.png)
-
-Figure 4 - options.txt file for Flood Fill trail
+![Figure 4 - options.txt file (Flood Fill selected)](images/options_txt.png)
 
 *robot.py* - showing algorithm to read search method from *options.txt*
 
-![](media/39c87009e5e0ead086192957d927da63.png)
+![robot.py code](images/algorithm_select.png)
 
-The included *readme.txt* has instructions on how to use the *options.txt* file
-so that each individual search method can be put through the tests.
+The included **readme.txt** shows how to use the _options.txt_ file to test the various algorithms.
 
 #### Maze management functions
 
-![](media/ea42adfea3db5691958b44834fa68966.png)
+![maze_management.py code](images/mazeobject.png)
 
-In addition to the algorithm implementation, I also coded the maze management
-routines in *maze_management.py.* In its development I learned a lot from the
-supplied *maze.py* and *showmaze.py* programs.
+In addition to the algorithm implementation, I also developed the maze management
+routines in *maze_management.py.* 
 
 Maze management includes the definition of a map of the maze that is built by
 the algorithms as they *explore* the maze based on the *sensor inputs* and
@@ -336,40 +339,25 @@ the algorithms as they *explore* the maze based on the *sensor inputs* and
 
 I chose to implement this rather than the dead end or random methods. The choice
 was primarily based on my limited experience with building small robot vehicles
-for simple navigation experiments. The robot shown in the pictures below does
-have additional sensors but it started out with SONAR and IR sensors facing the
-Front, Left and Right sides. Later I added a Rear sensor also.
-
-![](media/18298bcaa7276f4d1e89ecf557122736.jpg)
-
-![](media/6dfccfe5cf2164c56d0c6db9309cb0ef.jpg)
-
-The challenge for the physical robot was not as complex as the maze navigation
-problem and I was operating without a time limit. Some of the issues I saw were
-the robot going around in loops or getting caught in a corner.
+for simple navigation experiments. The challenge for the physical robot was not as 
+complex as the maze navigation problem and I was operating without a time limit. 
+Some of the issues I saw were the robot going around in loops or getting caught in a corner.
 
 The *follow_wall.py* implementation of this method never made it to the goal
 because it was “exploring” too much. The documented results show this.
 
-![](media/cbae310e9466c018407feda513b22c43.png)
-
 #### Graph Search methods
 
-As I learnt more of the methods I coded the wall following method, followed by
-the graph search algorithms and the flood fill method. These are in their own
-.py files (but they need *robot.py* to execute them).
+The graph search algorithms and the flood fill method were coded and tested next. 
+These are in their own .py files (but they need *robot.py* to execute them).
 
-![](media/8572a2787196d22be5c2069ba8d7d0fb.png)
-
-The graph search methods are based on the UC Berkley implementations previously
-referred to. They are implemented in *graph_search.py.* Within this file the 4
+The graph search methods are based on the UC Berkley implementations.
+They are implemented in *graph_search.py.* Within this file the 4
 graph search methods are implemented.
 
 Figure 5 main Graph Search
 
-![](media/e1aa755c37f0c6b7dc4fac732decffc4.png)
-
-The individual implementations are shown here:
+![Graph Search](iamges/graph_search.png)
 
 ##### *Discussion of Breadth First, Depth First and Uniform Cost methods*
 
