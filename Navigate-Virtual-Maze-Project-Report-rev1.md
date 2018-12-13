@@ -30,7 +30,7 @@ The approach, the methodology and the results are documented here. The
 conclusion is that the Flood Fill method is the best algorithm to solve the
 navigation of a maze effectively.
 
-The project definition is available in Udacity at this link [Plot and Navigate a Virtual Maz](https://docs.google.com/document/d/1ZFCH6jS3A5At7_v5IUM5OpAXJYiutFuSIjTzV_E-vdE/pub)
+The project definition is available in Udacity at this link [Plot and Navigate a Virtual Maze](https://docs.google.com/document/d/1ZFCH6jS3A5At7_v5IUM5OpAXJYiutFuSIjTzV_E-vdE/pub)
 
 Domain background
 -----------------
@@ -72,13 +72,12 @@ The *tester.py* program, included as part of the starter code, uses the *Robot*
 class (in *robot.py*) to navigate the maze using the search algorithms. The test
 condition is that the robot is given a maximum of 1000 time steps to locate the
 goal otherwise the run is said to have failed. It also reports back a score
-based on the formula (provided in the project definition) given below:
+based on the formula (from the project definition) given below:
 
 **Run Score = (Time steps for Second run) + 1/30(Time steps for First run)**
 
 The algorithms will be tested with the given mazes with multiple runs/trials.
-The reported scores will be collected and analyzed. Please see the
-[Results](#iv.-results) section for results and analysis.
+Please see the [Results](#iv.-results) section for the collected results and analysis.
 
 As the score is automatically calculated by the *tester.py,* we need to use it
 to compare the trial runs for each maze for each method. There could have been
@@ -102,11 +101,10 @@ Data Exploration and visualization
 
 ### Datasets and Inputs
 
-![](media/6c3ef977e1b36db392f2f81b69f267d2.png)
-
 The virtual robot is given information about the maze in the form of a text file
 (*Figure 1)*. The first line of the file gives the dimension of the maze (n) and
 the rest of the (n) lines define the maze. Here n is 12 for test_maze_01.
+![Figure 1](images/test_maze_01_txt.jpg)
 
 Each line in the text file has (n) integer numbers whose 4 bit (binary)
 representation gives the robot of the shape of the maze cell it is in. The
@@ -132,11 +130,9 @@ indicating a wall:
 | 14 | 1        | 1          | 1         | 0        | Left, Bottom and Right     |
 | 15 | 1        | 1          | 1         | 1        | All walls open = no walls! |
 
-*Figure 2* illustrates the maze and cell structure (from [Robot Motion Planning
-Project
-Description](https://docs.google.com/document/d/1ZFCH6jS3A5At7_v5IUM5OpAXJYiutFuSIjTzV_E-vdE/pub))
+*Figure 2* illustrates the maze and cell structure (from the project document)
 
-![](media/032090d98ba9eb9bbafcf29069766b17.png)
+![Figure 2](images/maze_cell.jpg)
 
 -   Please note that the walls are in reference to the virtual robot facing
     “top” of the maze.
@@ -148,9 +144,8 @@ Description](https://docs.google.com/document/d/1ZFCH6jS3A5At7_v5IUM5OpAXJYiutFu
     [Appendix](#appendix-test-maze-visualization-using-showmaze.py-14x14-and-16x16)
     shows the other 2 mazes.
 
-    ![](media/680edfb7b0d605ea64cd82e8275dc9e4.jpg)
+    ![Figure 3](images/test_maze_01.jpg)
 
-Figure 3 - test_maze_01.txt
 
 ### Robot sensor input
 
