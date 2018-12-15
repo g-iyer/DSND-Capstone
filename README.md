@@ -540,8 +540,8 @@ navigating.
 
 | A\*(A Star) | 1 | 156.73   | 324.47   | 177.53   | 1.35   | 1.45   | 1.03   |
 |-------------|---|----------|----------|----------|--------|--------|--------|
-| A\*(A Star) | 2 | 660.43   | 223.17   | 256.27   | 5.67   | 1.00   | 1.48   |
-| A\*(A Star) | 3 | 275.00   | 490.23   | 345.43   | 2.36   | 2.20   | 2.00   |
+| A\*(A Star) | 2 | 443.27   | 223.17   | 256.27   | 5.67   | 1.00   | 1.48   |
+| A\*(A Star) | 3 | 296.23   | 490.23   | 345.43   | 2.36   | 2.20   | 2.00   |
 | A\*(A Star) | 4 | 163.87   | 256.00   | 172.73   | 1.41   | 1.15   | 1.00   |
 | A\*(A Star) | 5 | 116.50   | 275.93   | 205.03   | 1.00   | 1.24   | 1.19   |
 | *Minimum*   |   | *116.50* | *223.17* | *172.73* | *1.35* | *1.15* | *1.03* |
@@ -580,8 +580,7 @@ full console output. The full console output shows that Flood Fill explores the
 maze multiple times to find the optimal path and then executes it consistently
 and gets the same score every time for a given maze.
 
-![](media/876942b2b469edd38bbe51edc88bfc78.png)
-
+![Flood Fill trial run](images/ff_run.png)
 
 While running the trials, I noticed that methods other than Flood Fill took 
 different number of steps (these can be seen on the console when the trials are run) 
