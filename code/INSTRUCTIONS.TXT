@@ -1,0 +1,33 @@
+INSTRUCTIONS.TXT - Navigate a Maze - Capstone Project - G Iyer
+
+1. Files included 
+	tester.py		supplied - to test the robot and provide scores for succesful runs 
+	maze.py			supplied - creating and managing the maze for tester.py
+	showmaze.py		supplied - standalone to print maze using turtle
+	
+	robot.py		supplied and modified to select algorithm and interface with tester.py
+
+	maze_managment.py	Maze related functions implemented
+	flood_fill.py		Flood Fill algorithm
+	graph_search.py		Search algorithms including BFS, DFS, UC and A*
+	follow_wall.py		Follow Wall algorithm
+	
+	util.py			Graph search utilities file form UC Berkley CS188 course website
+	
+	options.txt		Search method options (please see instructions below)
+	
+	
+2. Operating instructions
+	A.	Edit the options.txt file with one of these 6 values (enter ONLY the text in quotes)
+		"WF"	- Follow Wall 
+		"BF"	- Breadth First
+		"DF"	- Depth First
+		"UC"	- Uniform Cost
+		"ASTAR"	- A Star
+		"FF"	- Flood FiLL
+
+	B.	The trial is executed by this command - replace xx with 01, 02 or 03 as required.
+
+		python tester.py test_maze_xx.txt
+		
+		
