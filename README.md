@@ -1,7 +1,5 @@
 # Robot Motion Planning - DSND Capstone project
 
-
-
 I. Definition
 =============
 
@@ -142,7 +140,7 @@ indicating a wall:
 
 -   There is no data preprocessing in this project.
 
-    The maze corresponding to *test_maze_01.txt* file is shown below – generated
+    The maze corresponding to *test_maze_01.txt* file is shown below *Figure 3* – generated
     using the *showmaze.py* file provided with the project. The
     [Appendix](#appendix-test-maze-visualization-using-showmaze.py-14x14-and-16x16)
     shows the other 2 mazes.
@@ -322,7 +320,7 @@ of these six options – this made testing easy:
 
 ![robot.py code](images/algorithm_select.png)
 
-The included **readme.txt** shows how to use the _options.txt_ file to test the various algorithms.
+The included **instructions.txt** shows how to use the _options.txt_ file to test the various algorithms.
 
 #### Maze management functions
 
@@ -345,6 +343,7 @@ Some of the issues I saw were the robot going around in loops or getting caught 
 
 The *follow_wall.py* implementation of this method never made it to the goal
 because it was “exploring” too much. The documented results show this.
+@[Follow_wall.py code](images/follow_wall.png)
 
 #### Graph Search methods
 
@@ -357,7 +356,7 @@ graph search methods are implemented.
 
 Figure 5 main Graph Search
 
-![Graph Search](images/graph_search.png)
+![Figure 5 - Graph Search](images/graph_search.png)
 
 ##### *Discussion of Breadth First, Depth First and Uniform Cost methods*
 
@@ -372,7 +371,6 @@ cells) and then moves to the next level starting from the starting node. The
 simple image below shows the steps a breadth first method would take.
 
 ![Breadth First](images/bf_tree.png)
-
 Figure 6 - Breadth First (geeksforgeeks.org)
 
 Compared to Breadth First, Depth First searches for open cells in one branch
@@ -380,7 +378,6 @@ starting at the base node traversing till end and then starting with another
 branch. The image below shows the depth first approach.
 
 ![Depth First](images/depth_first.png)
-
 Figure 7 Depth First (wikipedia)
 
 Uniform cost as the name implies, uses the cost (distance, time etc.) to reach
@@ -461,7 +458,7 @@ Model Evaluation and Validation
 All results were collected in a spreadsheet and the following chart shows the
 scores, normalized scores, minimums and averages.
 
-![Trial runs and scores](data/trail_scores.png)
+![Trial runs and scores](data/trials_scores.png)
 
 The table shows the following:
 
@@ -512,7 +509,7 @@ Looking at the scores we can observe:
 -   Any trial that has either a “999” or “0” indicates a solution that is not
     optimal or robust.
 
-    -   Breadth First. Depth First and Uniform Cost all had trials that could
+    -   Breadth First, Depth First and Uniform Cost all had trials that could
         not complete as shown by the “999” scores in one or more of their trial
         runs.
 
@@ -525,7 +522,7 @@ Looking at the scores we can observe:
     -   As every trial results in the same score for each maze the Normal score
         is “1” and we don’t see any variance between trials.
 
-The results clearly show that Flood Fill should be the algorithm of choice as it
+The results clearly show that **_Flood Fill_** should be the algorithm of choice as it
 is *most efficient* (with the lowest scores for each trial) and *consistent* (every
 trial has the same score indicating that Flood Fill finds the best path and
 executes it).
@@ -567,7 +564,7 @@ The following figure shows a couple of possible paths for the 12 x 12 maze.
 There are more than these 2 paths to reach the goal as can be seen. This is to
 demonstrate that there are multiple paths to the goal.
 
-![Path possibilities](data/maze_paths.jpg)
+![Path possibilities](immages/maze_paths.jpg)
 
 The following figure shows the terminal output of a A\* trial run. Please note
 the number of steps and the final score shown (the picture shows the beginning,
@@ -575,7 +572,7 @@ the end of the first run, beginning of the final run (or run 1) and the final
 results. A sample terminal output file is included in the documentation for this
 project – *A-Star-sample-run.txt.* The output in the file shows the full run.
 
-![A Star trial run](data/a_star_trial.png)
+![A Star trial run](images/a_star_trial.png)
 
 Similarly, the Flood Fill trial run is shown below. It shows the beginning of
 the trial and the end. Please see the enclosed *Flood-fill-sample-run.txt* for a
@@ -585,12 +582,11 @@ and gets the same score every time for a given maze.
 
 ![](media/876942b2b469edd38bbe51edc88bfc78.png)
 
-Figure 9 Flood Fill trial run console output
 
-I observed that methods other than Flood Fill took different number of steps
-(these can be seen on the console when the trials are run) to reach the
-goal navigating via different routes on each run. Compared to these, Flood Fill search 
-consistently ran the same path every time.
+While running the trials, I noticed that methods other than Flood Fill took 
+different number of steps (these can be seen on the console when the trials are run) 
+to reach the goal navigating via different routes on each run. 
+Compared to these, Flood Fill search consistently ran the same path every time.
 
 Reflection
 ----------
@@ -614,7 +610,7 @@ properties such as having many dead ends, loops and braids. Please see this link
 ([Maze Classification](http://www.astrolog.org/labyrnth/algrithm.htm)),
 especially the section Routing. A partial screen shot shows this topic:
 
-![Maze Routing](maze_routing.png)
+![Maze Routing](images/maze_routing.png)
 
 It was very good to learn how the micromouse competition has influenced so many
 teams and the varied approach people have taken to contest. The application of
@@ -624,19 +620,14 @@ for me.
 Improvement
 -----------
 
-As I mentioned above it would have been good to have a maze generator to test
-other possibilities. I would have liked to apply some graphical methods like
-Python turtle or PyGame etc., but as that required lot more expertise I decided
-to leave them out. The main purpose was to see how these grid navigation methods
-simulate machine learning. Next, I would like to see if A\* search or Flood Fill
-can be used in one of my robot projects for collision detection and avoidance. I
-have been using the simple or brute force methods of dead end detection, follow
-wall etc., but this project has given me the knowledge of much better methods.
+It would have been good to have a maze generator to test different maze configurations.
+The main purpose was to see how these grid navigation methods simulate machine learning. 
+Next, I would like to see if A\* search or Flood Fill can be used in one of my robot projects 
+for collision detection and avoidance.
 
-In physical implementation, the sensors could be many but the minimum set used
-here was good enough to drive the robot through the maze. This was a thought
-provoking project to complete.
-
+In physical implementation, one could use more sensors such as a camera, IR sensors, wheel encoders etc.
+This project demonstrates how even with just 3 sensors we can have a very effective virtual robot.  I learnt a lot
+doing this project in areas of robot movement that I had not thought of before. 
 <br>References
 ==============
 
@@ -662,11 +653,11 @@ provoking project to complete.
 Appendix: Test Maze visualization using showmaze.py – 14x14 and 16x16
 =====================================================================
 
-![](media/d46814aaaf32160cc5ca42524bac6507.jpg)
+![test_maze_02.txt](images/test_maze_02.jpg)
 
 Figure 11 - Test Maze 02 (14 x 14)
 
-![](media/85667dd30e642716a5a9c561c1dad3e5.jpg)
+![test_maze_03.txt](images/test_maze_03.jpg)
 
 Figure 12 - Test Maze 03 (16 x 16)
 
