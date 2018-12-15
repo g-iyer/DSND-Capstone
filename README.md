@@ -530,29 +530,17 @@ executes it).
 Justification
 -------------
 
-Comparing the A\* search and Flood Fill scores (reproduced below) for each maze
+Comparing the A\* search and Flood Fill scores (figure below) for each maze
 the scores for Flood Fill are significantly better than our benchmark method,
-A\* search. The Flood Fill algorithm has been proven in many applications as a
+A\* search. 
+
+The Flood Fill algorithm has been proven in many applications as a
 robust and optimal method. The scores show that the Flood Fill method is
 consistent across all trials, whereas in A\* search and others each trial has a
 different score showing a level of randomness in decision making while
 navigating.
 
-| A\*(A Star) | 1 | 156.73   | 324.47   | 177.53   | 1.35   | 1.45   | 1.03   |
-|-------------|---|----------|----------|----------|--------|--------|--------|
-| A\*(A Star) | 2 | 443.27   | 223.17   | 256.27   | 5.67   | 1.00   | 1.48   |
-| A\*(A Star) | 3 | 296.23   | 490.23   | 345.43   | 2.36   | 2.20   | 2.00   |
-| A\*(A Star) | 4 | 163.87   | 256.00   | 172.73   | 1.41   | 1.15   | 1.00   |
-| A\*(A Star) | 5 | 116.50   | 275.93   | 205.03   | 1.00   | 1.24   | 1.19   |
-| *Minimum*   |   | *116.50* | *223.17* | *172.73* | *1.35* | *1.15* | *1.03* |
-| *Average*   |   | *274.51* | *313.96* | *231.40* | *2.36* | *1.41* | *1.34* |
-| Flood Fill  | 1 | 36.57    | 52.13    | 60.60    | 1.00   | 1.00   | 1.00   |
-| Flood Fill  | 2 | 36.57    | 52.13    | 60.60    | 1.00   | 1.00   | 1.00   |
-| Flood Fill  | 3 | 36.57    | 52.13    | 60.60    | 1.00   | 1.00   | 1.00   |
-| Flood Fill  | 4 | 36.57    | 52.13    | 60.60    | 1.00   | 1.00   | 1.00   |
-| Flood Fill  | 5 | 36.57    | 52.13    | 60.60    | 1.00   | 1.00   | 1.00   |
-| *Minimum*   |   | *36.57*  | *52.13*  | *60.60*  | *1.00* | *1.00* | *1.00* |
-| *Average*   |   | *36.57*  | *52.13*  | *60.60*  | *1.00* | *1.00* | *1.00* |
+![Flood Fill compared to Astar](images/a_star_ff_compare.jpg)
 
 V. Conclusion
 =============
