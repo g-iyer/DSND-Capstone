@@ -78,7 +78,7 @@ based on the formula (from the project definition) given below:
 **Run Score = (Time steps for Second run) + 1/30(Time steps for First run)**
 
 The algorithms will be tested with the given mazes with multiple runs/trials.
-Please see the [Results](#iv.-results) section for the collected results and analysis.
+Please see the *Results* section for the collected results and analysis.
 
 As the score is automatically calculated by the *tester.py,* we need to use it
 to compare the trial runs for each maze for each method. There could have been
