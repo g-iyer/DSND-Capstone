@@ -254,9 +254,9 @@ solve the problem to decide which method is the best. To compare such methods,
 we will need a **normalized score** that would specific to each maze. It would
 be calculated by dividing a given run score by the best possible score for that
 maze.
-
-      **_ Maze normal score = Robot run score/ Best possible score (for that maze) _**
-
+    
+   **_ Maze normal score = Robot run score/ Best possible score (for that maze) _**
+    
 Once the Maze Normal Score for each search method (per maze) is available we can
 compare to see which method performed best. We will use the A\* search scores as
 the benchmark to determine the best solution. A\* search was selected as it is a popular search
