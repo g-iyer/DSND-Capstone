@@ -145,8 +145,7 @@ indicating a wall:
 
     The maze corresponding to *test_maze_01.txt* file is shown below *Figure 3* – generated
     using the *showmaze.py* file provided with the project. The
-    [Appendix](#appendix-test-maze-visualization-using-showmaze.py-14x14-and-16x16)
-    shows the other 2 mazes.
+    *Appendix* shows the other 2 mazes.
 
     ![Figure 3](images/test_maze_01.jpg)
 *Figure 3* Visualization of test_maze_01 as shown by showmaze.py
