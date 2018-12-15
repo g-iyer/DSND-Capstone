@@ -36,8 +36,8 @@ in this repository to be used for testing etc.)__
 Domain background
 -----------------
 
-The project relates to the domain of robot localization and movement planning.
-For effective motion, a robot to know its position in the real or virtual world space,
+The project relates to the domain of **_robot localization and movement planning_**.
+For effective motion, a robot needs to know its position in the real or virtual world space,
 decide on the action to take and then complete the action – while
 considering the goal at all times.
 
@@ -106,6 +106,8 @@ The virtual robot is given information about the maze in the form of a text file
 (*Figure 1)*. The first line of the file gives the dimension of the maze (n) and
 the rest of the (n) lines define the maze. Here n is 12 for test_maze_01.
 ![Figure 1](images/test_maze_01_txt.jpg)
+*Figure 1* - test_maze_01.txt file
+
 
 Each line in the text file has (n) integer numbers whose 4 bit (binary)
 representation gives the robot of the shape of the maze cell it is in. The
@@ -131,9 +133,10 @@ indicating a wall:
 | 14 | 1        | 1          | 1         | 0        | Left, Bottom and Right     |
 | 15 | 1        | 1          | 1         | 1        | All walls open = no walls! |
 
-*Figure 2* illustrates the maze and cell structure (from the project document)
+
 
 ![Figure 2](images/maze_cell.jpg)
+*Figure 2* illustrates the maze and cell structure (from the project document)
 
 -   Please note that the walls are in reference to the virtual robot facing
     “top” of the maze.
@@ -146,6 +149,7 @@ indicating a wall:
     shows the other 2 mazes.
 
     ![Figure 3](images/test_maze_01.jpg)
+*Figure 3* Visualization of test_maze_01 as shown by showmaze.py
 
 ### Robot sensor input
 
@@ -233,7 +237,7 @@ the number of steps it takes for the robot to find the center of the maze.
 Benchmark
 ---------
 
->   The scoring method is defined in the project specifications as below:
+The scoring method is defined in the project specifications as below:
 
 *Score = Number of steps to complete Run 2 + (Number of steps to complete Run
 1)/30*
@@ -243,7 +247,7 @@ Benchmark
 
 -   The score is calculated and reported by the *tester.py* program provided.
 
->   Scores will vary for each method and for each type of maze.
+Scores will vary for each method and for each type of maze.
 
 The purpose of the benchmark is to evaluate the different algorithms used to
 solve the problem to decide which method is the best. To compare such methods,
@@ -251,7 +255,7 @@ we will need a **normalized score** that would specific to each maze. It would
 be calculated by dividing a given run score by the best possible score for that
 maze.
 
->   *Maze normal score = Robot run score/ Best possible score (for that maze)*
+      **_ Maze normal score = Robot run score/ Best possible score (for that maze) _**
 
 Once the Maze Normal Score for each search method (per maze) is available we can
 compare to see which method performed best. We will use the A\* search scores as
@@ -279,7 +283,7 @@ Python 3.6.2 (Anaconda 3 - 64 bit) was used for development and testing. I also 
 ([JetBrains Pycharm Community Edition](https://www.jetbrains.com/pycharm/)) as
 my IDE that helped a lot in the coding and instantaneous testing of new code.
 
-The project comes with the starter code given at this link [AI_starter_code.zip](https://drive.google.com/file/d/0B9Yf01UaIbUgQ2tjRHhKZGlHSzQ/view).
+The project's starter code is available at this link [AI_starter_code.zip](https://drive.google.com/file/d/0B9Yf01UaIbUgQ2tjRHhKZGlHSzQ/view).
 __(Caution: this code is in Python 2.7. As this project requires Python 3.0+, I have updated the code and posted it 
 in this repository to be used for testing etc.)__
 
@@ -315,8 +319,9 @@ of these six options – this made testing easy:
 * FF : Flood Fill
 
 ![Figure 4 - options.txt file (Flood Fill selected)](images/options_txt.png)
+*Figure 4* options.txt with FF as the algorithm
 
-*robot.py* - showing algorithm to read search method from *options.txt*
+**robot.py** - showing algorithm to read search method from *options.txt*
 
 ![robot.py code](images/algorithm_select.png)
 
@@ -324,10 +329,10 @@ The included **instructions.txt** shows how to use the _options.txt_ file to tes
 
 #### Maze management functions
 
-![maze_management.py code](images/mazeobject.png)
-
 In addition to the algorithm implementation, I also developed the maze management
 routines in *maze_management.py.* 
+
+![maze_management.py code](images/mazeobject.png)
 
 Maze management includes the definition of a map of the maze that is built by
 the algorithms as they *explore* the maze based on the *sensor inputs* and
@@ -343,7 +348,8 @@ Some of the issues I saw were the robot going around in loops or getting caught 
 
 The *follow_wall.py* implementation of this method never made it to the goal
 because it was “exploring” too much. The documented results show this.
-@[Follow_wall.py code](images/follow_wall.png)
+
+![Follow_wall.py code](images/follow_wall.png)
 
 #### Graph Search methods
 
@@ -354,9 +360,9 @@ The graph search methods are based on the UC Berkley implementations.
 They are implemented in *graph_search.py.* Within this file the 4
 graph search methods are implemented.
 
-Figure 5 main Graph Search
-
 ![Figure 5 - Graph Search](images/graph_search.png)
+*Figure 5* illustrates the maze and cell structure (from the project document)
+
 
 ##### *Discussion of Breadth First, Depth First and Uniform Cost methods*
 
@@ -458,7 +464,7 @@ Model Evaluation and Validation
 All results were collected in a spreadsheet and the following chart shows the
 scores, normalized scores, minimums and averages.
 
-![Trial runs and scores](data/trials_scores.png)
+![Trial runs and scores](images/trials_scores.png)
 
 The table shows the following:
 
@@ -588,11 +594,7 @@ It would be interesting to see if the run time limitation was removed whether
 the other algorithms managed to navigate the maze. As *tester.py* is not to be
 modified I did not try this.
 
-Similarly, it would have been good to have a program to create other maps – of
-different dimensions and properties such as braids and loops – to test the
-methods further. This project utilized the 3 mazes provided but I believe
-validity of a method is proven when the number of tests are larger. During my
-research, I found that mazes come in all different sizes and have many
+During my research, I found that mazes come in all different sizes and have many
 properties such as having many dead ends, loops and braids. Please see this link
 ([Maze Classification](http://www.astrolog.org/labyrnth/algrithm.htm)),
 especially the section Routing. A partial screen shot shows this topic:
