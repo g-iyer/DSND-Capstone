@@ -9,9 +9,10 @@ _These files are included in the *AI Starter Code* file._
   * robot.py		- modified to select algorithm and interface with tester.py
   
   Maze definition files: (these define mazes of sizes 12x12, 14x14 AND 16X16)
-  	test_maze_01.txt
-	test_maze_02.txt
-	test_maze_03.txt
+  
+  	*  test_maze_01.txt
+	*  test_maze_02.txt
+	*  test_maze_03.txt
 
 ## Additional files required for the project
 	maze_managment.py	  - Maze related functions implemented
