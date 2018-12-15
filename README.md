@@ -564,7 +564,7 @@ The following figure shows a couple of possible paths for the 12 x 12 maze.
 There are more than these 2 paths to reach the goal as can be seen. This is to
 demonstrate that there are multiple paths to the goal.
 
-![Path possibilities](immages/maze_paths.jpg)
+![Path possibilities](images/maze_paths.jpg)
 
 The following figure shows the terminal output of a A\* trial run. Please note
 the number of steps and the final score shown (the picture shows the beginning,
@@ -628,7 +628,8 @@ for collision detection and avoidance.
 In physical implementation, one could use more sensors such as a camera, IR sensors, wheel encoders etc.
 This project demonstrates how even with just 3 sensors we can have a very effective virtual robot.  I learnt a lot
 doing this project in areas of robot movement that I had not thought of before. 
-<br>References
+
+References
 ==============
 
 1.  BreezySLAM: A Simple, efficient, cross-platform Python package for
