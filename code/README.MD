@@ -6,7 +6,7 @@ _These files are included in the *AI Starter Code* file._
   - maze.py		- creating and managing the maze for tester.py
   - showmaze.py	- standalone to print maze using turtle
 	
-  > robot.py		- modified to select algorithm and interface with tester.py
+  * robot.py		- modified to select algorithm and interface with tester.py
   
   Maze definition files: (these define mazes of sizes 12x12, 14x14 AND 16X16)
   	test_maze_01.txt
