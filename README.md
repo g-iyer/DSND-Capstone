@@ -360,7 +360,7 @@ They are implemented in *graph_search.py.* Within this file the 4
 graph search methods are implemented.
 
 ![Figure 5 - Graph Search](images/graph_search.png)
-*Figure 5* illustrates the maze and cell structure (from the project document)
+*Figure 5* Graph Search methods
 
 
 ##### *Discussion of Breadth First, Depth First and Uniform Cost methods*
