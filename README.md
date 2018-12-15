@@ -568,7 +568,7 @@ full console output. The full console output shows that Flood Fill explores the
 maze multiple times to find the optimal path and then executes it consistently
 and gets the same score every time for a given maze.
 
-![Flood Fill trial run](images/ff_run.png)
+![Flood Fill trial run](images/FF_RUN.png)
 
 While running the trials, I noticed that methods other than Flood Fill took 
 different number of steps (these can be seen on the console when the trials are run) 
