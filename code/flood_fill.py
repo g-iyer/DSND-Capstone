@@ -7,6 +7,8 @@ from maze_management import dir_reverse, dir_lt, dir_rt, map_heading_value, Dir
 
 
 class FloodFill(object):
+    """Main class for the Flood Fill algorithm 
+    """
     OPEN_WALLS = True
 
     def __init__(self, maze_map, curr_pos, curr_heading):
@@ -38,6 +40,10 @@ class FloodFill(object):
         self.rotation, self.movement = 0, 0
 
     def explore_maze(self, sensors):
+        """ function to check cells as part of the exploration run
+    	     input: sensors
+    	     returns: rotation and movement 
+        """
         if self.RUNZERO:
             print(("Exploring run - count = {}".format(self.run_count)))
         else:
@@ -77,6 +83,8 @@ class FloodFill(object):
         return self.rotation, self.movement
 
     def reset_run(self):
+        """ function to reset the run once 1st run is over
+        """
 
         if self.RUNZERO:
             self.RUNZERO = False
@@ -94,7 +102,9 @@ class FloodFill(object):
         return 'Reset', 'Reset'
 
     def at_goal(self):
-# reached center or home
+        """ Check to see if the goal "center" or "home" was reached and return a True/False
+        """
+	
         if (self.destination is "CENTER" and ([self.x, self.y] in self.goal_cells)) or\
                 (self.destination is "HOME" and self.x is 0 and self.y is 0):
             return True
@@ -166,6 +176,10 @@ class FloodFill(object):
         self.flood_fill()
 
     def next_direction(self, sensors):
+        """ return the next direction for the robot to move
+        	inputs: sensor
+        	returns: next direction
+        """
 
         curr_cell = [self.x, self.y]
         cell_depth = self.get_cell_depth(curr_cell)

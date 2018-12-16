@@ -1,10 +1,11 @@
-"""
+"""Maze management functions needed for the project are implemented here.
 maze_management.py
 The maze management is implemented here. The maze object is defined and all the relevant directions are mapped.
 """
 from enum import Enum
 class Dir(Enum):
-    #    Enum class of 4 cardinal directions
+    """ enumerating the 4 cardinal directions - used in other functions
+    """
     Up = 0
     Right = 1
     Down = 2
@@ -22,11 +23,12 @@ dir_reverse = {Dir.Up: Dir.Down, Dir.Right: Dir.Left, Dir.Down: Dir.Up, Dir.Left
 dir_sensors = {Dir.Up: [Dir.Left, Dir.Up, Dir.Right], Dir.Right: [Dir.Up, Dir.Right, Dir.Down],
                Dir.Down: [Dir.Right, Dir.Down, Dir.Left], Dir.Left: [Dir.Down, Dir.Left, Dir.Up]}
 
-# Main class definition for the maze object used by all methods
-# the maze is defined as a list of values for the walls - open or closed as needed.
-# the size of the maze is dim ** 2 or (dim x dim)
 #
 class MazeObject(object):
+    """Main class definition for the maze object used by all methods
+	The maze is defined as a list of values for the walls - open or closed as needed.
+	The size of the maze is dim ** 2 or (dim x dim)
+    """
     def __init__(self, maze_dim, openwall=True):
         self.dim = maze_dim
         self.openwall = openwall
@@ -46,8 +48,12 @@ class MazeObject(object):
                            [self.dim // 2, self.dim // 2], [self.dim // 2, self.dim // 2 - 1]]
         
     def mark_maze_walls(self, curr_pos, curr_heading, sensors):
+        """ check for walls to see if there is a opening (non-zero value in one or more of the sensors
+    	0 means blocked
+    	inputs: current position, current heading and sensors
+    	"""
         walls = []
-# check to see if there is opening ahead (indicated by a non-zero value in one or more of the sensors
+	
         for i, s_distance in enumerate(sensors):
             wall = dir_sensors[curr_heading][i]
             if s_distance is 0:

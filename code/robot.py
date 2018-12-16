@@ -7,15 +7,15 @@ from graph_search import *
 This Robot.py implementation uses a options.txt file to specify which search method to use 
 The options.txt file has one single line and one value at a time. 
 The valid values are given below:
-                 To run this method             Use
-                 ------------------             --
-                 Follow Wall                    WF
-    Graph search Breadth First                  BF
-                 Depth First                    DF
-                 Uniform Cost                   UC
-                 A Star (A*)                    ASTAR
+                 To run this method             	Use
+                 ------------------             		--
+                 Follow Wall                    		WF
+    		Graph search Breadth First		BF
+                 Depth First                    		DF
+                 Uniform Cost                   		UC
+                 A Star (A*)                    		ASTAR
                    
-                 Flood Fill                     FF
+                 Flood Fill                     		FF
 '''
 SEARCH_ALGOS = {
     'WF': FollowWall,
