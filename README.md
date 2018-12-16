@@ -303,6 +303,8 @@ in this repository to be used for testing etc.)__
 -   *test_maze_nn.txt - These files provide three sample mazes upon which to
     test the robot*
 
+The code and associated files are in this GitHub repository ![DSND-Capstone](https://github.com/g-iyer/DSND-Capstone)
+
 #### Search option selection
 
 I updated code in the *robot.py* to properly initialize required data items.
